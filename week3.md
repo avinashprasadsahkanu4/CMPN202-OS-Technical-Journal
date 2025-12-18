@@ -1,7 +1,7 @@
 # Week 3: Application Selection for Performance Testing
 
 ## 1. Introduction
-In Phase 3, I selected and deployed a suite of applications to generate specific workload profiles (CPU, Memory, I/O, and Network). The selection criteria focused on **reproducibility**, **granularity** (the ability to fine-tune load), and **industry relevance**. [cite_start]These tools will form the basis of the quantitative performance analysis in Week 6[cite: 46].
+In​‍​‌‍​‍‌ Phase 3, I chose and implemented a set of tools for creating different types of workload profiles (CPU, Memory, I/O, and Network). The main points for choosing these tools were **reproducibility**, **granularity** (the ability to precisely control the load), and **industry relevance**. These utilities are going to be the foundation of the quantitative performance analysis in Week ​‍​‌‍​‍‌6.
 
 ## 2. Application Selection Matrix
 The following applications were chosen to represent the diverse workload types required by the assessment brief.
@@ -96,16 +96,19 @@ I will execute the following commands via a remote script (`monitor-server.sh`) 
     * **Metric:** `r/s` (Reads per sec) and `%util` (Device saturation).
 
 ## 6. Critical Reflection
-Phase 3 marked a shift from infrastructure setup to designing a rigorous testing methodology. A key realization this week was the importance of **deterministic testing**.
+Phase​‍​‌‍​‍‌ 3 was a moment of transition from physical infrastructure setup to the next big step - designing a foolproof experiment. One important insight that we took out of this week was the significance of deterministic testing.
 
 ### A. The Build vs. Buy Decision in Tool Selection
-Initially, I considered writing simple Python scripts to generate CPU load. However, I realized this approach lacks scientific reproducibility; a loop might execute differently depending on the Python interpreter version. This led to the selection of **`stress-ng`** and **`sysbench`**. These industry-standard tools allow for precise, granular control over specific CPU instructions and memory methods, ensuring that my performance data in Week 6 will be consistent and comparable.
+
+In the beginning, I had the idea of programming some rudimentary Python scripts for creating the CPU load. However, I concluded that this method is not scientifically reproducible because a loop could execute differently depending on the version of the Python interpreter. The result was the resort to **`stress-ng`** and **`sysbench`**. These are the industry standard tools that make it possible to precisely pinpoint the CPU instructions and memory methods one wants to use, thus assuring me that the performance data in Week 6 will be consistent and comparable.
 
 ### B. Sustainability Considerations
-The choice of **Nginx** over Apache was a deliberate decision aligned with the module's sustainability theme. Data centres currently consume ~1% of global electricity. Nginx's asynchronous, event-driven architecture typically has a smaller memory footprint and lower CPU usage per concurrent connection compared to Apache's process-driven model. By selecting Nginx, I am optimizing the energy cost per request of this simulated infrastructure.
+
+Choosing **Nginx** over Apache was not only a technical decision but also a conscious move towards the sustainability theme of this module. At present, the electricity consumption of data centres is equivalent to ~1% of the global total. Comparing the two architectures, Nginx's asynchronous, event-driven one usually requires less memory and CPU per concurrent connection than Apache's process-driven model. Hence, my choice of Nginx is a step in the right direction when it comes to energy optimization of the simulated infrastructure.
 
 ### C. The Observer Effect Challenge
-Designing the monitoring strategy highlighted the Observer Effect, the risk that the monitoring tool itself consumes the resources it is trying to measure. This validated my architectural decision to use a separate **Workstation** for data collection. By running the heavy lifting SSH client, data logging, visualization on the Workstation and only executing lightweight probes `mpstat`, `iostat` on the server, I minimize the measurement overhead, ensuring the data accurately reflects the application's performance, not the monitoring tool's cost.
+
+Coming up with the monitoring strategy got me thinking about the Observer Effect, which is the risk that the monitoring tool itself becomes a consumer of the resources it is trying to measure. This has, in fact, confirmed the architectural decision that I made of having a completely separate **Workstation** for data acquisition. The Workstation runs the heavy SSH client, data logging, visualization, while the server only performs the lightweight probes `mpstat`, `iostat`; thus, the measurement overhead is minimized and the data correspond to the application's performance rather than the monitoring tool's ​‍​‌‍​‍‌cost.
 
 ---
 
