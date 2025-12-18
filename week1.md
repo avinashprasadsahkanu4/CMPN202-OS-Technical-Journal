@@ -69,6 +69,8 @@ The following command-line outputs confirm the successful deployment of the head
 
 #### A. Kernel & Architecture (`uname -a`)
 
+![System Architecture](./images/uname-a.png)
+
 Evidence of a 64-bit Linux kernel running on the target hardware. This verifies the core OS version.
 
 #### B. Memory Usage (`free -h`)
