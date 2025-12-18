@@ -6,7 +6,6 @@ This week focused on the planning and initial deployment of a dual-system archit
 ## 2. System Architecture
 
 
-[Image of computer network diagram]
 
 * High-level System Architecture showing the isolated Host-Only network and dual-VM setup.*
 
@@ -18,10 +17,10 @@ This week focused on the planning and initial deployment of a dual-system archit
 I selected **Ubuntu Server 24.04 LTS** for the target system. This choice was made based on a comparative analysis against Debian Stable and Rocky Linux, focusing on three key areas:
 
 #### A. Sustainability & Resource Efficiency
-By deploying the "Headless" version (no Graphical User Interface), I significantly reduce the system's resource footprint. [cite_start]Data centres consume approximately 1% of global electricity [cite: 11][cite_start], and optimised OS configurations can reduce server energy consumption by 15-30%[cite: 12]. A headless setup minimizes RAM usage (typically <512MB) and CPU cycles compared to a desktop environment, strictly adhering to these sustainability principles.
+By deploying the "Headless" version (no Graphical User Interface), I significantly reduce the system's resource footprint. Data centres consume approximately 1% of global electricity, and optimized OS configurations can reduce server energy consumption by 15-30%. A headless setup minimizes RAM usage typically <512MB and CPU cycles compared to a desktop environment, strictly adhering to these sustainability principles.
 
 #### B. Employability & Industry Standards
-Ubuntu is a dominant operating system in public cloud infrastructure (AWS, Azure, Google Cloud). [cite_start]Mastering its package management (`apt`) and service configuration (`systemd`) is directly relevant to DevOps and Cloud Engineering roles[cite: 188]. This choice ensures my learning is aligned with current job market requirements.
+Ubuntu is a dominant operating system in public cloud infrastructure (AWS, Azure, Google Cloud). Mastering its package management `apt` and service configuration `systemd` is directly relevant to DevOps and Cloud Engineering roles. This choice ensures my learning is aligned with current job market requirements.
 
 #### C. Security Framework
 Unlike alternatives like Rocky Linux (which uses SELinux), Ubuntu uses **AppArmor** by default. This provides a robust Mandatory Access Control (MAC) framework that allows for path-based security profiles. This is an industry-standard control that balances security depth with manageable configuration complexity for the 7-week timeframe.
@@ -65,23 +64,23 @@ network:
 
 The following command-line outputs confirm the successful deployment of the headless server environment.
 
-A. Kernel & Architecture (`uname -a`)
+#### A. Kernel & Architecture (`uname -a`)
 
 Evidence of a 64-bit Linux kernel running on the target hardware. This verifies the core OS version.
 
-B. Memory Usage (`free -h`)
+#### B. Memory Usage (`free -h`)
 
 Analysis: The system is using minimal RAM (ensure this is <500MB) due to the headless configuration, validating the sustainability justification.
 
-C. Disk Usage (`df -h`)
+#### C. Disk Usage (`df -h`)
 
 Storage allocation for the root filesystem. This establishes the baseline storage footprint before installing applications.
 
-D. IP Address Verification (`ip addr`)
+#### D. IP Address Verification (`ip addr`)
 
 Confirmation that interface enp0s8 has the static IP 192.168.56.20, proving the network configuration was successful.
 
-E. Distribution Info (`lsb_release -a`)
+#### E. Distribution Info (`lsb_release -a`)
 
 Verifies the installation of Ubuntu 24.04 LTS.
 
