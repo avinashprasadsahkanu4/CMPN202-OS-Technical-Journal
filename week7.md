@@ -100,7 +100,7 @@ Despite the hardening measures, the following risks remain and are accepted as p
 | **R3** | **DoS Attack** | Medium | The server can still be overwhelmed by traffic (Port 80). **Mitigation:** Rate limiting configured in Nginx helps, but upstream DDoS protection would be required for production. |
 
 ## 6. Project Conclusion
-This coursework successfully demonstrated the deployment of a secure, sustainable, and high-performance Linux server. By strictly adhering to the "Headless" constraint and utilizing CLI tools for all administration, I have developed professional competencies in **Remote Management**, **Security Hardening**, and **Quantitative Performance Analysis**. The final audit confirms a system that is resilient by design, satisfying the module's security learning outcomes.
+This coursework successfully demonstrated the deployment of a secure, sustainable, and high-performance Linux server. By strictly adhering to the **Headless** constraint and utilizing CLI tools for all administration, I have developed professional competencies in **Remote Management**, **Security Hardening**, and **Quantitative Performance Analysis**. The final audit confirms a system that is resilient by design, satisfying the module's security learning outcomes.
 
 ---
 [← Previous: Week 6](./week6.md) | [Return to Home](./index.md)
