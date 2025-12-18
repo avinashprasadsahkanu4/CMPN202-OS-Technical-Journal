@@ -2,10 +2,10 @@
 # Week 6: Performance Evaluation and Analysis
 
 ## 1. Introduction
-In Phase 6, I executed the performance testing methodology designed in Week 3. The objective was to establish a quantitative baseline, identify system bottlenecks under load, and implement specific optimizations to improve efficiency and throughput.
+During​‍​‌‍​‍‌ Phase 6, I carried out performance testing according to the plan I made in Week 3. The goal was to create a quantitative baseline, recognize the system's bottlenecks under the load, and carry out the improvements in performance and throughput.
 
 ## 2. Testing Methodology
-All tests were executed on the server, with metrics captured remotely from the workstation to minimize observer bias.
+The whole series of tests was run on the server, while the metrics were gathered remotely from the workstation so that the observer's bias would be minimized.
 
 * **Load Generator:** `stress-ng` (CPU/RAM) and `ab` (Web Server).
 * **Monitoring Tool:** Custom SSH `vmstat` scripts.
@@ -52,7 +52,7 @@ To address these bottlenecks, I implemented two targeted improvements.
 
 ### Optimization 1: Reducing Swappiness (Sustainability)
 I lowered `vm.swappiness` from the default **60** to **10**.
-* **Rationale:** This tells the kernel to prefer keeping data in RAM (which is fast and low-power) rather than writing to the disk (which is slow and energy-intensive). This aligns with the **Sustainability** theme by reducing unnecessary disk I/O.
+* **Rationale:** This command suggests the kernel keep data in RAM, which is very fast and low-power, rather than send it to the disk, which is slow and energy-consuming. This is in line with the **Sustainability** theme as it limits unnecessary disk ​‍​‌‍​‍‌I/O.
 * **Command:** `sudo sysctl vm.swappiness=10`
 
 ### Optimization 2: Tuning Nginx Concurrency
@@ -82,7 +82,7 @@ After applying the fixes, I re-ran the web server load test (`ab`).
 **ApacheBench results showing higher Requests Per Second after tuning.**
 
 ## 6. Learning Reflection
-This phase demonstrated the tangible impact of default configurations on system performance. Out-of-the-box settings are often generic; tuning them for the specific workload, e.g., a headless web server, yielded a measurable performance increase. I learned that optimization is not just about raw speed; lowering swappiness was a strategic decision to trade a small amount of RAM availability for significantly reduced disk wear and latency, illustrating a professional understanding of **OS resource management trade-offs**.
+This​‍​‌‍​‍‌ stage made it clear how the system's performance is really affected by the default configurations. Typically, factory settings are quite generic; thus, adjusting them to the specific workload, say, a headless web server, resulted in a noticeable performance boost. I got to know that optimization is not simply about maximum speed; in the example of reducing swappiness, it was a clever move to sacrifice a little of the RAM for getting a substantial decrease in disk wear and latency, thus demonstrating a professional level of **OS resource management trade-offs** ​‍​‌‍​‍‌understanding.
 
 ---
 [← Previous: Week 5](./week5.md) | [Return to Home](./index.md) | [Next: Week 7 →](./week7.md)
