@@ -1,8 +1,7 @@
 # Week 1: System Planning and Distribution Selection
 
 ## 1. Introduction
-
-This week focused on the planning and initial deployment of a dual-system architecture. The primary objective was to establish a secure, isolated environment that simulates a professional cloud infrastructure setup, separating the management plane **Workstation** from the production plane **Headless Server**.
+This​‍​‌‍​‍‌ week mainly revolved around strategizing and partly implementing the dual system architecture. The foremost goal is to set up a tightly controlled and completely segregated environment which mimics a real-world professional cloud infrastructure scenario, hence, the separation of the management plane Workstation and the production plane **Headless ​‍​‌‍​‍‌Server**.
 
 ## 2. System Architecture
 
@@ -15,19 +14,19 @@ This week focused on the planning and initial deployment of a dual-system archit
 
 <img width="1126" height="738" alt="image" src="https://github.com/user-attachments/assets/23239e5a-6a7b-4d6e-8ecb-6effe1b543b2" />
 
-I selected **Ubuntu Server 24.04 LTS** for the target system. This choice was made based on a comparative analysis against Debian Stable and Rocky Linux, focusing on three key areas:
+For​‍​‌‍​‍‌ the target system, I picked **Ubuntu Server 24.04 LTS**. The decision was taken after a comparative analysis of Debian Stable and Rocky Linux, concentrating on three main ​‍​‌‍​‍‌aspects:
 
 #### A. Sustainability & Resource Efficiency
 
-By deploying the **Headless** version without a Graphical User Interface, I significantly reduce the system's resource footprint. Data centres consume approximately 1% of global electricity, and optimized OS configurations can reduce server energy consumption by 15-30%. A headless setup minimizes RAM usage, typically <512MB and CPU cycles compared to a desktop environment, strictly adhering to these sustainability principles.
+I reduce the system's resource footprint to a minimum by employing the **Headless** version of the system, i.e. without a Graphical User Interface. Data centers account for about 1% of the world's power consumption, and servers with well-optimized OS configurations can save 15-30% of their energy usage. The headless configuration employs extremely low RAM, usually <512MB, and CPU cycles, it is in full compliance with the sustainability directives.
 
 #### B. Employability & Industry Standards
 
-Ubuntu is a dominant operating system in public cloud infrastructure. Mastering its package management `apt` and service configuration `systemd` is directly relevant to DevOps and Cloud Engineering roles. This choice ensures my learning is aligned with current job market requirements.
+Ubuntu ranks as the leading operating system in public cloud infrastructure. Therefore, the knowledge of its package management `apt` and service configuration `systemd` is highly valuable in DevOps and Cloud Engineering roles. Consequently, this decision makes my knowledge close to the current requirements of the job market.
 
 #### C. Security Framework
 
-Unlike alternatives like Rocky Linux, which uses SELinux, Ubuntu uses **AppArmor** by default. This provides a robust Mandatory Access Control (MAC) framework that allows for path-based security profiles. This is an industry-standard control that balances security depth with manageable configuration complexity for the 7-week timeframe.
+Compared to the alternatives like Rocky Linux, which employs SELinux, Ubuntu by default uses **AppArmor**. This provides a strong Mandatory Access Control (MAC) system, which is based on the use of security paths or profiles. It is an industry-standard control that is a good compromise between the depth of security and the simplicity of the configuration that can be achieved within 7 weeks of ​‍​‌‍​‍‌development.
 
 ## 4. Workstation Configuration Decision
 
@@ -102,23 +101,8 @@ Verifies the installation of Ubuntu 24.04 LTS.
 
 ## 7. Learning Reflection
 
-Deploying this architecture highlighted the trade-off between convenience and control. While a bridged network would have been easier to set up, it would expose the server to the wider LAN. By choosing the Host-Only network, I prioritized security isolation and ethical compliance, accepting the complexity of managing dual network adapters **NAT for updates + Host-Only for SSH** as a necessary professional trade-off.
+Choosing​‍​‌‍​‍‌ to deploy this architecture unveiled the dilemma between ease and control. The bridged network would have been simpler to set up, but it would have left the server vulnerable to the whole LAN. By selecting the Host-Only network, I opted for security isolation and adherence to the law; thus, I took on the complexity of handling dual network adapters **NAT for updates + Host-Only for SSH** as a necessary professional ​‍​‌‍​‍‌trade-off.
 
 ---
 [← Return to Home](./index.md) | [Next: Week 2 →](./week2.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
