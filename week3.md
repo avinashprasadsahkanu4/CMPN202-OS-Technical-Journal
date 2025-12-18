@@ -105,7 +105,7 @@ Initially, I considered writing simple Python scripts to generate CPU load. Howe
 The choice of **Nginx** over Apache was a deliberate decision aligned with the module's sustainability theme. Data centres currently consume ~1% of global electricity. Nginx's asynchronous, event-driven architecture typically has a smaller memory footprint and lower CPU usage per concurrent connection compared to Apache's process-driven model. By selecting Nginx, I am optimizing the energy cost per request of this simulated infrastructure.
 
 ### C. The Observer Effect Challenge
-Designing the monitoring strategy highlighted the Observer Effect"—the risk that the monitoring tool itself consumes the resources it is trying to measure. This validated my architectural decision to use a separate **Workstation** for data collection. By running the heavy lifting SSH client, data logging, visualization on the Workstation and only executing lightweight probes `mpstat`, `iostat` on the server, I minimize the measurement overhead, ensuring the data accurately reflects the application's performance, not the monitoring tool's cost.
+Designing the monitoring strategy highlighted the Observer Effect, the risk that the monitoring tool itself consumes the resources it is trying to measure. This validated my architectural decision to use a separate **Workstation** for data collection. By running the heavy lifting SSH client, data logging, visualization on the Workstation and only executing lightweight probes `mpstat`, `iostat` on the server, I minimize the measurement overhead, ensuring the data accurately reflects the application's performance, not the monitoring tool's cost.
 
 ---
 
