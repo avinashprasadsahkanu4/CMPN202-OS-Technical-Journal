@@ -1,12 +1,12 @@
 # Week 5: Advanced Security and Monitoring Infrastructure
 
 ## 1. Introduction
-In Phase 5, I elevated the system's defense posture by moving beyond basic firewalling to **active intrusion detection** and **mandatory access control**. Additionally, I developed the automation infrastructure required to verify these controls and monitor system health remotely.
+By the end of phase 5, I had enhanced the system's security level from the ground of firewall to **active intrusion detection** and **mandatory access control**. Furthermore, I set up the automation infrastructure necessary for checking these controls and system status monitoring from a distance.
 
 ## 2. Advanced Security Implementation
 
 ### A. Access Control (AppArmor)
-I verified and configured **AppArmor** to restrict program capabilities. Unlike standard Linux permissions (DAC), AppArmor uses profiles to ensure that compromised applications cannot access files outside their designated scope.
+I​‍​‌‍​‍‌ checked and set up **AppArmor** so that it limits what programs can do. In contrast to the usual Linux permissions (DAC), AppArmor has profiles that guarantee even compromised applications cannot open files outside their limited area.
 
 ```bash
 sudo apt update
@@ -63,7 +63,7 @@ sudo fail2ban-client status sshd
 ## 3. Automation & Scripting
 
 ### A. Security Baseline Script (`security-baseline.sh`)
-I created a Bash script to reside on the server. This script serves as an automated auditor, verifying that all security controls from Weeks 4 and 5 remain active.
+I wrote a Bash script that is planned to be placed on a server. This program acts as a self-auditor; its main purpose is to check whether all security controls of Weeks 4 and 5 still ​‍​‌‍​‍‌exist.
 
 ```bash
 nano ~/security-baseline.sh
@@ -109,7 +109,7 @@ chmod +x ~/security-baseline.sh
 <img width="838" height="420" alt="image" src="https://github.com/user-attachments/assets/cbf8ac48-e2dd-4a87-94e4-31606664d15c" />
 
 ### B. Remote Monitoring Script (`monitor-server.sh`)
-I developed a client-side script to collect performance metrics over SSH. This ensures I can monitor the server without keeping a constant terminal window open.
+I came up with an idea to write a program that runs on the client-side and gathers performance data through SSH. This means that I will be able to keep an eye on the server even if I don't have a terminal window open all the time.
 
 **Script Source Code:**
 ```yaml
@@ -136,9 +136,9 @@ chmod +x monitor-server.sh
 <img width="705" height="280" alt="image" src="https://github.com/user-attachments/assets/774ccffe-d502-4745-89fe-969bf68c334b" />
 
 ## 4. Learning Reflection
-Developing the `security-baseline.sh` script highlighted the value of Infrastructure as Code. Instead of manually checking settings every week, I now have a tool that gives me a pass/fail status in seconds. This reduces human error and ensures that if a configuration is accidentally changed (configuration drift), it will be immediately detected during the next audit.
+When working on the `security-baseline.sh` script, I came to realize how invaluable Infrastructure as Code is. Rather than physically performing setting checks each week, now I have a tool that provides me a pass/fail indication within seconds. This minimizes human mistakes, and if a configuration is changed without authorization (configuration drift), the next audit will uncover it instantly.
 
-[← Previous: Week 4](./week4.md) | [Return to Home](./index.md) | [Next: Week 6 →](./week6.md)
 
 ---
+[← Previous: Week 4](./week4.md) | [Return to Home](./index.md) | [Next: Week 6 →](./week6.md)
 
