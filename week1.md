@@ -17,10 +17,11 @@ This week focused on the planning and initial deployment of a dual-system archit
 I selected **Ubuntu Server 24.04 LTS** for the target system. This choice was made based on a comparative analysis against Debian Stable and Rocky Linux, focusing on three key areas:
 
 #### A. Sustainability & Resource Efficiency
-By deploying the "Headless" version (no Graphical User Interface), I significantly reduce the system's resource footprint. Data centres consume approximately 1% of global electricity, and optimized OS configurations can reduce server energy consumption by 15-30%. A headless setup minimizes RAM usage typically <512MB and CPU cycles compared to a desktop environment, strictly adhering to these sustainability principles.
+By deploying the **Headless** version no Graphical User Interface, I significantly reduce the system's resource footprint. Data centres consume approximately 1% of global electricity, and optimized OS configurations can reduce server energy consumption by 15-30%. A headless setup minimizes RAM usage, typically <512MB and CPU cycles compared to a desktop environment, strictly adhering to these sustainability principles.
 
 #### B. Employability & Industry Standards
-Ubuntu is a dominant operating system in public cloud infrastructure (AWS, Azure, Google Cloud). Mastering its package management `apt` and service configuration `systemd` is directly relevant to DevOps and Cloud Engineering roles. This choice ensures my learning is aligned with current job market requirements.
+
+Ubuntu is a dominant operating system in public cloud infrastructure. Mastering its package management `apt` and service configuration `systemd` is directly relevant to DevOps and Cloud Engineering roles. This choice ensures my learning is aligned with current job market requirements.
 
 #### C. Security Framework
 Unlike alternatives like Rocky Linux (which uses SELinux), Ubuntu uses **AppArmor** by default. This provides a robust Mandatory Access Control (MAC) framework that allows for path-based security profiles. This is an industry-standard control that balances security depth with manageable configuration complexity for the 7-week timeframe.
@@ -31,8 +32,8 @@ Unlike alternatives like Rocky Linux (which uses SELinux), Ubuntu uses **AppArmo
 I chose to deploy a dedicated **Ubuntu Desktop 24.04 VM** as my administrative workstation.
 
 **Justification:**
-1.  **Security Isolation:** Using a dedicated VM for administration ensures that security tools (like `nmap` and `hydra`) are contained within the virtual network. [cite_start]This prevents accidental scanning of the university or home network, strictly adhering to the ethical guidelines [cite: 216-218].
-2.  **Tool Compatibility:** A native Linux workstation allows for seamless SSH key management and scripting. Scripts developed here (e.g., `bash` monitoring scripts) will run natively on the server without character encoding issues often found in Windows environments.
+1.  **Security Isolation:** Using a dedicated VM for administration ensures that security tools, like `nmap` and `hydra` are contained within the virtual network. This prevents accidental scanning of the university or home network, strictly adhering to the ethical guidelines.
+2.  **Tool Compatibility:** A native Linux workstation allows for seamless SSH key management and scripting. Scripts developed here, e.g., `bash` monitoring scripts will run natively on the server without character encoding issues often found in Windows environments.
 3.  **Pedagogical Constraint:** This setup forces 100% reliance on Linux-to-Linux remote administration, mimicking a real-world scenario where a SysAdmin manages remote fleets from a secure jump box.
 
 ## 5. Network Configuration Documentation
@@ -41,10 +42,10 @@ To ensure a secure and isolated testing environment, I utilized the **VirtualBox
 
 | Setting | Configuration | Reason |
 | :--- | :--- | :--- |
-| **Network Mode** | Host-Only Adapter (`vboxnet0`) | Creates an air-gapped network isolated from the internet. [cite_start]Essential for ethical security testing[cite: 218]. |
-| **Subnet** | `192.168.56.0/24` | Standard private IP range for VirtualBox. |
+| **Network Mode** | Host-Only Adapter | Creates an air-gapped network isolated from the internet. Essential for ethical security testing. |
+| **Subnet** | `192.168.56.6/24` | Standard private IP range for VirtualBox. |
 | **Server IP** | `192.168.56.20` | Static IP assigned via Netplan to ensure consistent SSH access. |
-| **Workstation IP** | `192.168.56.10` | Static IP for reliable log analysis and monitoring. |
+| **Workstation IP** | `192.168.1.176` | Static IP for reliable log analysis and monitoring. |
 
 **Netplan Configuration (Server `00-installer-config.yaml`):**
 ```yaml
@@ -55,7 +56,7 @@ network:
     enp0s8:
       dhcp4: false         # Host-Only Adapter (Internal Network)
       addresses:
-        - 192.168.56.20/24
+        - 192.168.56.6/24
   version: 2
 ```
 
@@ -70,7 +71,7 @@ Evidence of a 64-bit Linux kernel running on the target hardware. This verifies 
 
 #### B. Memory Usage (`free -h`)
 
-Analysis: The system is using minimal RAM (ensure this is <500MB) due to the headless configuration, validating the sustainability justification.
+**Analysis:** The system is using minimal RAM (ensure this is <500MB) due to the headless configuration, validating the sustainability justification.
 
 #### C. Disk Usage (`df -h`)
 
@@ -87,7 +88,7 @@ Verifies the installation of Ubuntu 24.04 LTS.
 
 ## 7. Learning Reflection
 
-Deploying this architecture highlighted the trade-off between convenience and control. While a bridged network would have been easier to set up, it would expose the server to the wider LAN. By choosing the Host-Only network, I prioritized security isolation and ethical compliance, accepting the complexity of managing dual network adapters (NAT for updates + Host-Only for SSH) as a necessary professional trade-off.
+Deploying this architecture highlighted the trade-off between convenience and control. While a bridged network would have been easier to set up, it would expose the server to the wider LAN. By choosing the Host-Only network, I prioritized security isolation and ethical compliance, accepting the complexity of managing dual network adapters **NAT for updates + Host-Only for SSH** as a necessary professional trade-off.
 
 ---
 [← Return to Home](./index.md) | [Next: Week 2 →](./week2.md)
