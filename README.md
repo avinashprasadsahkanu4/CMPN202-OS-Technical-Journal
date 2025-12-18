@@ -7,7 +7,9 @@
 **Assessment: Technical Journal & Configuration Project**
 
 # CMPN202-OS-Technical-Journal
+
 This is the detailed​‍​‌‍​‍‌ technical journal describing the setup, securing, and performance analysis of a Linux server infrastructure for Module CMPN202. 
+
 ---
 
 ## 📖 Project Overview
