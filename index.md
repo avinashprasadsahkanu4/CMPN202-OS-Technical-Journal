@@ -28,7 +28,7 @@ Please navigate through the weekly logs below to view the technical implementati
 | Week | Phase | Description | Status |
 | :--- | :--- | :--- | :--- |
 | **[Week 1](./week1.md)** | **System Planning** | Architecture design, distribution selection (Ubuntu Server), and initial network setup. | ✅ Completed |
-| **[Week 2](./week2.md)** | **Security Planning** | Threat modeling, security baseline checklist, and testing methodology design. | ✅ Completed |
+| **[Week 2](./week2.md)** | **Security Planning** | Threat modelling, security baseline checklist, and testing methodology design. | ✅ Completed |
 | **[Week 3](./week3.md)** | **Application Selection** | Selecting workloads (Nginx, Stress-ng) and defining resource profiles. | ✅ Completed |
 | **[Week 4](./week4.md)** | **Implementation** | SSH hardening, firewall configuration (UFW), and user privilege management. | ✅ Completed |
 | **[Week 5](./week5.md)** | **Advanced Security** | Automating security with scripts, implementing Fail2Ban, and AppArmor. | ✅ Completed |
