@@ -1,14 +1,13 @@
 # Week 7: Security Audit and System Evaluation
 
 ## 1. Introduction
-The final phase of this project involved a comprehensive security audit to validate the configuration against industry standards. I utilized **Lynis** for host-based auditing and **Nmap** for network-based vulnerability scanning. This report documents the findings, remediations applied, and the final security posture of the server.
+In​‍​‌‍​‍‌ the security validation step of the project, I conducted a thorough security audit to ensure that the configurations comply with industry standards. For a host-based audit, I ran Lynis, and for a network-based vulnerability scan, I ran Nmap. The report records the disclosures, the fixes done, as well as the server's final security strength level.
 
 ## 2. Infrastructure Security Assessment (Lynis)
-
-I performed a deep compliance scan using Lynis. The audit evaluates key areas including authentication, firewalling, and file permissions.
+I ran a full-fledged compliance scan by means of Lynis, which, in its evaluation, authentication, firewalling, and file permission, are among the key areas it looks at.
 
 ### A. Initial Audit (Before Remediation)
-The initial scan identified warnings regarding missing legal banners and file permission settings on the SSH configuration.
+The first scan detected warnings regarding the absence of legal banners and the file permission settings on the SSH configuration.
 * **Initial Hardening Index:** 63
 
 ```bash
@@ -21,14 +20,15 @@ sudo lynis audit system
 *Initial Lynis scan result showing the baseline score.*
 
 ### B. Remediation Actions
-To improve the security posture and increase the hardening index, I applied the following advanced fixes based on Lynis recommendations:
-1.  **System Auditing:** Installed `auditd` and `acct` packages. This enables the Linux Audit Framework to track security-relevant events and user actions, a critical requirement for high-security environments.
-2.  **Shared Memory Hardening:** Modified `/etc/fstab` to mount `/run/shm` with `noexec` and `nosuid`. This prevents attackers from executing malicious binaries hidden in shared memory.
-3.  **SSH Timeouts:** Configured `ClientAliveInterval 300` in `sshd_config` to automatically disconnect idle sessions after 5 minutes, reducing the risk of session hijacking.
-4.  **Legal Banner:** Configured a warning banner (`/etc/issue.net`) to provide legal notice to unauthorized users.
+I have made the following advanced changes based on Lynis recommendations to improve security posture and increase the hardening index:
+
+1. **System Auditing:** Installed `auditd` and `acct` packages. The Linux Audit Framework thus can record security-relevant events and user actions, which is an essential feature of high-security environments.
+2. **Shared memory hardening:** Changed `/etc/fstab` to mount `/run/shm` with `noexec` and `nosuid` options. This is a preventative measure against intruders who may try to execute malicious binaries hidden in shared memory.
+3. **SSH timeouts:** Set `ClientAliveInterval 300` in `sshd_config` so that the server disconnects idle sessions automatically after 5 minutes, hence mitigating the risk of session hijacking.
+4. **Legal banner:** Placed a warning banner `/etc/issue.net` to present a legal notice to unauthorized ​‍​‌‍​‍‌users.
 
 ### C. Final Audit (After Remediation)
-A subsequent scan confirmed the effectiveness of these controls, resulting in a measurable improvement in the security score.
+Another​‍​‌‍​‍‌ scan afterwards verified the efficiency of these controls, and there was a notable security score improvement.
 
 ```bash
 sudo apt update
@@ -61,8 +61,7 @@ sudo lynis audit system
 **Improved Hardening Index after applying auditing and kernel hardening fixes.**
 
 ## 3. Network Security Assessment (Nmap)
-
-I conducted an external port scan from the workstation to verify the firewall rules implemented in Week 4.
+I carried out an external port scan from the workstation to check the firewall rules that were implemented in Week 4.
 
 **Command Executed:** `nmap -sV 192.168.56.6`
 
@@ -71,7 +70,7 @@ I conducted an external port scan from the workstation to verify the firewall ru
 **Nmap output showing that ONLY Port 22 (SSH) is accessible. All other ports are filtered/closed.**
 
 **Analysis:**
-The scan confirms that the **UFW Firewall** is correctly dropping unsolicited traffic. No unnecessary ports, like DNS/53 or MySQL/3306, are exposed to the external network, minimizing the attack surface.
+The scan determines that the **UFW Firewall** is properly rejecting unauthorized traffic. There are no unnecessary ports, such as DNS/53 or MySQL/3306, that are exposed to the external network, the attack surface is kept to a minimum.
 
 ## 4. Service Inventory & Justification
 Per the **Least Privilege** principle, I verified that only essential services are active.
@@ -91,7 +90,7 @@ systemctl list-units --type=service --state=running
 | **unattended-upgrades** | Running | **Security.** Automates the installation of security patches. |
 
 ## 5. Remaining Risk Assessment
-Despite the hardening measures, the following risks remain and are accepted as part of the operational trade-offs.
+Regardless​‍​‌‍​‍‌ the toughening steps, the risks below continue to be there and are considered the operational ​‍​‌‍​‍‌trade-offs.
 
 | Risk ID | Vulnerability | Severity | Mitigation / Acceptance Rationale |
 | :--- | :--- | :--- | :--- |
@@ -100,7 +99,7 @@ Despite the hardening measures, the following risks remain and are accepted as p
 | **R3** | **DoS Attack** | Medium | The server can still be overwhelmed by traffic (Port 80). **Mitigation:** Rate limiting configured in Nginx helps, but upstream DDoS protection would be required for production. |
 
 ## 6. Project Conclusion
-This coursework successfully demonstrated the deployment of a secure, sustainable, and high-performance Linux server. By strictly adhering to the **Headless** constraint and utilizing CLI tools for all administration, I have developed professional competencies in **Remote Management**, **Security Hardening**, and **Quantitative Performance Analysis**. The final audit confirms a system that is resilient by design, satisfying the module's security learning outcomes.
+The coursework has vividly conveyed the setting up of a secure, sustainable, and high-performing Linux server. By strictly complying with the **Headless** constraint and resorting to CLI tools for all administration tasks, I have gained professional skills in **Remote Management**, **Security Hardening**, and **Quantitative Performance Analysis**. The conclusive audit reveals an inherently resilient system, thus meeting the module's security learning ​‍​‌‍​‍‌outcomes.
 
 ---
 [← Previous: Week 6](./week6.md) | [Return to Home](./index.md)
