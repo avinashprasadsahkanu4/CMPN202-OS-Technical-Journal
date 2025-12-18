@@ -112,7 +112,7 @@ chmod +x ~/security-baseline.sh
 I developed a client-side script to collect performance metrics over SSH. This ensures I can monitor the server without keeping a constant terminal window open.
 
 **Script Source Code:**
-
+``yaml
 #!/bin/bash
 TARGET_USER="adminuser"
 TARGET_IP="192.168.56.6"
@@ -126,6 +126,7 @@ ssh $TARGET_USER@$TARGET_IP "free -m | grep Mem | awk '{print \$3}'"
 # 2. Get Disk Usage
 echo "[*] Disk Usage (Root):"
 ssh $TARGET_USER@$TARGET_IP "df -h / | awk 'NR==2 {print \$5}'"
+```
 
 ```bash
 nano ./monitor-server.sh
@@ -133,7 +134,6 @@ chmod +x monitor-server.sh
 ./monitor-server.sh
 ```
 <img width="705" height="280" alt="image" src="https://github.com/user-attachments/assets/774ccffe-d502-4745-89fe-969bf68c334b" />
-
 
 ## 4. Learning Reflection
 Developing the `security-baseline.sh` script highlighted the value of Infrastructure as Code. Instead of manually checking settings every week, I now have a tool that gives me a pass/fail status in seconds. This reduces human error and ensures that if a configuration is accidentally changed (configuration drift), it will be immediately detected during the next audit.
