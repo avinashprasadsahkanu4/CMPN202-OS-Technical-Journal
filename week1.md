@@ -6,10 +6,8 @@ This week focused on the planning and initial deployment of a dual-system archit
 
 ## 2. System Architecture
 
-
+![System Architecture](./images/architecture.png)
 * High-level System Architecture showing the isolated Host-Only network and dual-VM setup.*
-
-**(Action: Upload your diagram image to your repo in an `images/` folder and link it here, e.g., `![System Diagram](./images/week1-diagram.png)`)**
 
 ## 3. Distribution Selection & Justification
 
