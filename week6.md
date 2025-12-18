@@ -22,6 +22,11 @@ All tests were executed on the server, with metrics captured remotely from the w
 | **Nginx Throughput** | N/A | **850 req/sec** | (Initial Baseline for Web Traffic). |
 
 ```bash
+ stress-ng --cpu 2 --vm 2 --vm-bytes 128M --timeout 60s --metrics-brief
+```
+<img width="1323" height="585" alt="image" src="https://github.com/user-attachments/assets/aa3faf7b-2884-4f58-b4c3-f12e6ab643bf" />
+
+```bash
 ssh adminuser@192.168.56.6 "vmstat 1 5"
 ssh adminuser@192.168.56.6 "vmstat 1 10"
 ```
