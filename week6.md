@@ -82,7 +82,7 @@ After applying the fixes, I re-ran the web server load test (`ab`).
 **ApacheBench results showing higher Requests Per Second after tuning.**
 
 ## 6. Learning Reflection
-This phase demonstrated the tangible impact of default configurations on system performance. Out-of-the-box settings are often generic; tuning them for the specific workload, e.g., a headless web server, yielded a measurable performance increase. I learned that optimization is not just about raw speed—lowering swappiness was a strategic decision to trade a small amount of RAM availability for significantly reduced disk wear and latency, illustrating a professional understanding of **OS resource management trade-offs**.
+This phase demonstrated the tangible impact of default configurations on system performance. Out-of-the-box settings are often generic; tuning them for the specific workload, e.g., a headless web server, yielded a measurable performance increase. I learned that optimization is not just about raw speed; lowering swappiness was a strategic decision to trade a small amount of RAM availability for significantly reduced disk wear and latency, illustrating a professional understanding of **OS resource management trade-offs**.
 
 ---
 [← Previous: Week 5](./week5.md) | [Return to Home](./index.md) | [Next: Week 7 →](./week7.md)
