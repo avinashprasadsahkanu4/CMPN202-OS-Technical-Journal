@@ -2,10 +2,9 @@
 
 ## 1. Introduction
 
-This week focused on the planning and initial deployment of a dual-system architecture. The primary objective was to establish a secure, isolated environment that simulates a professional cloud infrastructure setup, separating the management plane (Workstation) from the production plane (Headless Server).
+This week focused on the planning and initial deployment of a dual-system architecture. The primary objective was to establish a secure, isolated environment that simulates a professional cloud infrastructure setup, separating the management plane **Workstation** from the production plane **Headless Server**.
 
 ## 2. System Architecture
-
 
 
 * High-level System Architecture showing the isolated Host-Only network and dual-VM setup.*
@@ -15,10 +14,12 @@ This week focused on the planning and initial deployment of a dual-system archit
 ## 3. Distribution Selection & Justification
 
 ### Selected Distribution: Ubuntu Server 24.04 LTS (Headless)
+
 I selected **Ubuntu Server 24.04 LTS** for the target system. This choice was made based on a comparative analysis against Debian Stable and Rocky Linux, focusing on three key areas:
 
 #### A. Sustainability & Resource Efficiency
-By deploying the **Headless** version no Graphical User Interface, I significantly reduce the system's resource footprint. Data centres consume approximately 1% of global electricity, and optimized OS configurations can reduce server energy consumption by 15-30%. A headless setup minimizes RAM usage, typically <512MB and CPU cycles compared to a desktop environment, strictly adhering to these sustainability principles.
+
+By deploying the **Headless** version without a Graphical User Interface, I significantly reduce the system's resource footprint. Data centres consume approximately 1% of global electricity, and optimized OS configurations can reduce server energy consumption by 15-30%. A headless setup minimizes RAM usage, typically <512MB and CPU cycles compared to a desktop environment, strictly adhering to these sustainability principles.
 
 #### B. Employability & Industry Standards
 
@@ -33,7 +34,7 @@ Unlike alternatives like Rocky Linux (which uses SELinux), Ubuntu uses **AppArmo
 I chose to deploy a dedicated **Ubuntu Desktop 24.04 VM** as my administrative workstation.
 
 **Justification:**
-1.  **Security Isolation:** Using a dedicated VM for administration ensures that security tools, like `nmap` and `hydra` are contained within the virtual network. This prevents accidental scanning of the university or home network, strictly adhering to the ethical guidelines.
+1.  **Security Isolation:** Using a dedicated VM for administration ensures that security tools, like `nmap` and `hydra`, are contained within the virtual network. This prevents accidental scanning of the university or home network, strictly adhering to the ethical guidelines.
 2.  **Tool Compatibility:** A native Linux workstation allows for seamless SSH key management and scripting. Scripts developed here, e.g., `bash` monitoring scripts will run natively on the server without character encoding issues often found in Windows environments.
 3.  **Pedagogical Constraint:** This setup forces 100% reliance on Linux-to-Linux remote administration, mimicking a real-world scenario where a SysAdmin manages remote fleets from a secure jump box.
 
@@ -46,7 +47,7 @@ To ensure a secure and isolated testing environment, I utilized the **VirtualBox
 | **Network Mode** | Host-Only Adapter | Creates an air-gapped network isolated from the internet. Essential for ethical security testing. |
 | **Subnet** | `192.168.56.6/24` | Standard private IP range for VirtualBox. |
 | **Server IP** | `192.168.56.20` | Static IP assigned via Netplan to ensure consistent SSH access. |
-| **Workstation IP** | `192.168.1.176` | Static IP for reliable log analysis and monitoring. |
+| **Workstation IP** | `192.168.1.10` | Static IP for reliable log analysis and monitoring. |
 
 **Netplan Configuration (Server `00-installer-config.yaml`):**
 ```yaml
