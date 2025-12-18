@@ -24,16 +24,18 @@ By deploying the **Headless** version without a Graphical User Interface, I sign
 Ubuntu is a dominant operating system in public cloud infrastructure. Mastering its package management `apt` and service configuration `systemd` is directly relevant to DevOps and Cloud Engineering roles. This choice ensures my learning is aligned with current job market requirements.
 
 #### C. Security Framework
-Unlike alternatives like Rocky Linux (which uses SELinux), Ubuntu uses **AppArmor** by default. This provides a robust Mandatory Access Control (MAC) framework that allows for path-based security profiles. This is an industry-standard control that balances security depth with manageable configuration complexity for the 7-week timeframe.
+
+Unlike alternatives like Rocky Linux, which uses SELinux, Ubuntu uses **AppArmor** by default. This provides a robust Mandatory Access Control (MAC) framework that allows for path-based security profiles. This is an industry-standard control that balances security depth with manageable configuration complexity for the 7-week timeframe.
 
 ## 4. Workstation Configuration Decision
 
 ### Selected Option: Option A (Linux Desktop VM)
+
 I chose to deploy a dedicated **Ubuntu Desktop 24.04 VM** as my administrative workstation.
 
 **Justification:**
 1.  **Security Isolation:** Using a dedicated VM for administration ensures that security tools, like `nmap` and `hydra`, are contained within the virtual network. This prevents accidental scanning of the university or home network, strictly adhering to the ethical guidelines.
-2.  **Tool Compatibility:** A native Linux workstation allows for seamless SSH key management and scripting. Scripts developed here, e.g., `bash` monitoring scripts will run natively on the server without character encoding issues often found in Windows environments.
+2.  **Tool Compatibility:** A native Linux workstation allows for seamless SSH key management and scripting. Scripts developed here, e.g., `bash` monitoring scripts, will run natively on the server without character encoding issues often found in Windows environments.
 3.  **Pedagogical Constraint:** This setup forces 100% reliance on Linux-to-Linux remote administration, mimicking a real-world scenario where a SysAdmin manages remote fleets from a secure jump box.
 
 ## 5. Network Configuration Documentation
