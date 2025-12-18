@@ -11,7 +11,7 @@
 ---
 
 ## 📖 Project Overview
-This technical journal documents the end-to-end deployment, security hardening, and performance analysis of a dual-system Linux infrastructure. Over the course of 7 weeks, I have designed and implemented a secure **Headless Ubuntu Server** managed exclusively via SSH from a dedicated **Linux Workstation**.
+This​‍​‌‍​‍‌ technical journal records the entire process of a dual-system Linux infrastructure setup, security enhancement, and performance testing. Throughout 7 weeks, I have designed and built a secure **Headless Ubuntu Server** which is only accessible via SSH from a dedicated **Linux ​‍​‌‍​‍‌Workstation**.
 
 ### Key Objectives
 * **Infrastructure Design:** Deploying an isolated dual-system architecture using VirtualBox.
