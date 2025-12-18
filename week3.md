@@ -15,7 +15,7 @@ The following applications were chosen to represent the diverse workload types r
 | **Server Service** | **Nginx** | A high-performance web server. [cite_start]I selected Nginx over Apache for its event-driven architecture, which is more resource-efficient (Sustainability), making it ideal for our lightweight headless server[cite: 46]. |
 
 ## 3. Installation Documentation
-[cite_start]All installations were performed via SSH using the `apt` package manager on Ubuntu 24.04 LTS[cite: 47].
+All installations were performed via SSH using the `apt` package manager on Ubuntu 24.04 LTS.
 
 ### A. System Update
 Ensuring repository lists were current before installation.
@@ -57,7 +57,12 @@ systemctl status nginx
 ```
 <img width="1143" height="463" alt="image" src="https://github.com/user-attachments/assets/34224d2a-dc12-4e7d-b54c-a3abc37b6f6e" />
 
-**Verification that tools are installed and the Nginx service is active.**
+```bash
+iperf3 -s
+```
+<img width="1072" height="104" alt="image" src="https://github.com/user-attachments/assets/2625bcb5-7abb-4553-b890-e7a46efebad2" />
+
+**Verification that tools are installed and the `nginx` and `iperf` services are active.**
 
 ## 4. Expected Resource Profiles
 Based on the documentation for these tools, I have projected the expected resource impact during the Week 6 testing phase.
@@ -73,8 +78,8 @@ Based on the documentation for these tools, I have projected the expected resour
 To measure the impact of these applications, I will utilize the following remote monitoring strategy. All data will be captured from the Workstation to minimize "observer effect" on the target server.
 
 ### A. Real-Time Monitoring (Qualitative)
-* **Tool:** `htop` (via SSH).
-* **Purpose:** Visual confirmation that the correct resource (e.g., CPU vs RAM) is being stressed during the test.
+* **Tool:** `htop` via SSH.
+* **Purpose:** Visual confirmation that the correct resource is being stressed during the test.
 
 ### B. Data Logging (Quantitative)
 I will execute the following commands via a remote script (`monitor-server.sh`) to capture raw data for analysis:
