@@ -112,7 +112,7 @@ chmod +x ~/security-baseline.sh
 I developed a client-side script to collect performance metrics over SSH. This ensures I can monitor the server without keeping a constant terminal window open.
 
 **Script Source Code:**
-``yaml
+```yaml
 #!/bin/bash
 TARGET_USER="adminuser"
 TARGET_IP="192.168.56.6"
