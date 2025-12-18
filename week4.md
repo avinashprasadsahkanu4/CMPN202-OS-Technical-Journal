@@ -1,17 +1,18 @@
 # Week 4: Initial System Configuration & Security Implementation
 
 ## 1. Introduction
-Phase 4 marks the transition from planning to active implementation. In this phase, I deployed the foundational security controls designed in Week 2. The primary objective was to harden the server by removing password dependencies and strictly limiting network access to the administrative workstation.
+Phase​‍​‌‍​‍‌ 4 essentially represents the realization of the preparation work that has gone before. It was in this phase that I put in place the basement security measures that had been sketched out in Week 2. The server was to be fortified in such a tight manner that the removal of passwords and the granting of remote access only to the administrator's workstation would suffice for the network security.
 
-**Administrative Constraint:** As per the assessment brief, all configurations documented below were performed remotely via SSH.
+**Administrative Constraint:** In accordance with the assessment brief, all the changes described below have been executed through SSH remotely. 
 
 ## 2. User Privilege Management
-To adhere to the Principle of Least Privilege, I transitioned from the default user to a dedicated administrative account.
+
+In order to fully comply with the Principle of Least Privilege, the default user was replaced with a separate administrative ​‍​‌‍​‍‌account.
 
 **Implementation Steps:**
-1.  Created a new user `adminuser` to separate administrative actions from system service accounts.
-2.  Added `adminuser` to the `sudo` group for elevated privileges.
-3.  **Security Impact:** This prevents direct usage of the root account, ensuring all administrative actions are logged and attributable.
+1.​‍​‌‍​‍‌ A new user `adminuser` was created to distinguish administrative actions from system service accounts.
+2. The `adminuser` was given membership to the `sudo` group to grant elevated privileges.
+3. **Security Impact:** In this way, root account direct logins are disallowed, and all administrative actions are recorded and can be traced ​‍​‌‍​‍‌back.
 
 ```bash
 sudo adduser adminuser
@@ -98,7 +99,7 @@ sudo ufw status numbered
 **`sudo ufw status` numbered showing the strict allow rule for the Workstation IP.**
 
 ## 5. Learning Reflection
-Implementing these controls remotely via SSH introduced a critical risk of lockout. If I had enabled the firewall before verifying my specific IP or disabled password auth before testing the key, I would have lost access to the headless server. This reinforced the professional practice of Test, then Apply. I  verified the SSH key connection in a separate terminal window before modifying the **sshd_config** to disable passwords.
+One​‍​‌‍​‍‌ critical risk of lockout came from implementing these controls remotely through SSH. For instance, if I had turned the firewall on without my IP check or if I had switched off password authentication without my key test, the headless server would have been inaccessible to me. This was again a strong professional lesson of Test, then Apply. Before I changed the **sshd_config** to disable passwords, I checked the SSH key connection in a separate terminal ​‍​‌‍​‍‌window.
 
 
 [← Previous: Week 3](./week3.md) | [Return to Home](./index.md) | [Next: Week 5 →](./week5.md)
