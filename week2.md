@@ -1,10 +1,10 @@
 # Week 2: Security Planning and Testing Methodology
 
 ## 1. Introduction
-Following the infrastructure deployment in Week 1, this phase focuses on designing a robust security baseline and a standardized performance testing methodology. This planning ensures that all future configurations are deliberate, documented, and aligned with industry best practices for **Security by Design**.
+After​‍​‌‍​‍‌ the Week 1 infrastructure rollout, the focus is shifted to establishing a strong security baseline and performance testing standard. Such planning makes sure that all subsequent configurations are intentional, recorded, and conform to the recent industry standards for **Security by ​‍​‌‍​‍‌Design**.
 
 ## 2. Threat Modeling
-To secure the headless server effectively, I have identified three primary threat vectors relevant to a remote-access Linux environment. The following model maps these threats to specific mitigation strategies I will implement in Weeks 4 and 5.
+For​‍​‌‍​‍‌ the effective securing of the headless server, I have pinpointed three main threat vectors that are characteristic of a remote-access Linux environment. The diagram below associates these threats with the exact mitigation strategies that I am going to carry out in Weeks 4 and ​‍​‌‍​‍‌5.
 
 | ID | Threat | Description | Impact | Mitigation Strategy |
 | :--- | :--- | :--- | :--- | :--- |
@@ -99,7 +99,7 @@ grep -nE "PermitRootLogin|PasswordAuthentication" /etc/ssh/sshd_config
 **Default `sshd_config` allows Root login and Password authentication.**
 
 ## 6. Learning Reflection
-Defining the threat model first highlighted the importance of defense in depth. I realized that relying solely on a firewall is insufficient; if an attacker bypasses the IP restriction, the secondary layer of SSH Key Authentication serves as the critical backstop. This planning phase has shifted my mindset from "making it work" to making it secure by design.
+The​‍​‌‍​‍‌ first step in defining the threat model revealed to me that defense in depth was crucial. I understood that just having a firewall was not enough; if an attacker somehow gets around the IP restriction, the next layer of SSH Key Authentication will be the essential rescue. This effort phase has changed my thinking from just getting it to work to making it secure by ​‍​‌‍​‍‌design.
 
 ---
 [← Previous: Week 1](./week1.md) | [Return to Home](./index.md) | [Next: Week 3 →](./week3.md)
