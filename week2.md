@@ -1,7 +1,7 @@
 # Week 2: Security Planning and Testing Methodology
 
 ## 1. Introduction
-Following the infrastructure deployment in Week 1, this phase focuses on designing a robust security baseline and a standardized performance testing methodology. This planning ensures that all future configurations are deliberate, documented, and aligned with industry best practices for "Security by Design.
+Following the infrastructure deployment in Week 1, this phase focuses on designing a robust security baseline and a standardized performance testing methodology. This planning ensures that all future configurations are deliberate, documented, and aligned with industry best practices for **Security by Design**.
 
 ## 2. Threat Modeling
 To secure the headless server effectively, I have identified three primary threat vectors relevant to a remote-access Linux environment. The following model maps these threats to specific mitigation strategies I will implement in Weeks 4 and 5.
