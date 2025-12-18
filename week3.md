@@ -75,9 +75,12 @@ Based on the documentation for these tools, I have projected the expected resour
 | **Nginx (Load Test)** | Network I/O | CPU (Softirq) | High network throughput with moderate CPU usage for interrupt handling. |
 
 ## 5. Monitoring Strategy
-To measure the impact of these applications, I will utilize the following remote monitoring strategy. All data will be captured from the Workstation to minimize "observer effect" on the target server.
+To measure the impact of these applications, I will utilize the following remote monitoring strategy. All data will be captured from the Workstation to minimize observer effect on the target server.
 
 ### A. Real-Time Monitoring (Qualitative)
+
+<img width="2376" height="1389" alt="image" src="https://github.com/user-attachments/assets/dc0b19fe-0185-4719-898b-15f941502cde" />
+
 * **Tool:** `htop` via SSH.
 * **Purpose:** Visual confirmation that the correct resource is being stressed during the test.
 
