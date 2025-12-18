@@ -13,6 +13,8 @@ This week focused on the planning and initial deployment of a dual-system archit
 
 ### Selected Distribution: Ubuntu Server 24.04 LTS (Headless)
 
+<img width="1126" height="738" alt="image" src="https://github.com/user-attachments/assets/23239e5a-6a7b-4d6e-8ecb-6effe1b543b2" />
+
 I selected **Ubuntu Server 24.04 LTS** for the target system. This choice was made based on a comparative analysis against Debian Stable and Rocky Linux, focusing on three key areas:
 
 #### A. Sustainability & Resource Efficiency
@@ -89,7 +91,7 @@ Storage allocation for the root filesystem. This establishes the baseline storag
 
 <img width="924" height="347" alt="ip addr" src="https://github.com/user-attachments/assets/a2b6d028-db30-4f63-a97f-108388a53a51" />
 
-Confirmation that interface enp0s8 has the static IP 192.168.56.6, proving the network configuration was successful.
+Confirmation that interface enp0s3 has the static IP 192.168.56.6, proving the network configuration was successful.
 
 #### E. Distribution Info (`lsb_release -a`)
 
