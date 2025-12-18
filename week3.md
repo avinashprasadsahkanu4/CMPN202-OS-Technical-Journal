@@ -12,7 +12,7 @@ The following applications were chosen to represent the diverse workload types r
 | **RAM-Intensive** | **stress-ng (--vm)** | Capable of aggressively exercising the virtual memory subsystem (`--vm`), forcing page faults and swap usage to test memory pressure limits. |
 | **Disk I/O** | **sysbench** | A scriptable multi-threaded benchmark tool. I chose this over `dd` because `sysbench` can simulate random read/write access patterns, which better reflect real-world server database behaviour. |
 | **Network-Intensive** | **iperf3** | The standard tool for measuring active TCP/UDP bandwidth. It allows measuring maximum throughput independently of disk speed. |
-| **Server Service** | **Nginx** | A high-performance web server. [cite_start]I selected Nginx over Apache for its event-driven architecture, which is more resource-efficient (Sustainability), making it ideal for our lightweight headless server[cite: 46]. |
+| **Server Service** | **Nginx** | A high-performance web server. I selected Nginx over Apache for its event-driven architecture, which is more resource-efficient (Sustainability), making it ideal for our lightweight headless server. |
 
 ## 3. Installation Documentation
 All installations were performed via SSH using the `apt` package manager on Ubuntu 24.04 LTS.
@@ -37,6 +37,7 @@ I installed the suite in a single pass to ensure dependency consistency.
 sudo apt install stress-ng sysbench iperf3 nginx -y
 ```
 <img width="1708" height="1066" alt="image" src="https://github.com/user-attachments/assets/71e16b58-86db-4ee5-a9fe-5e1307577cab" />
+<img width="1137" height="596" alt="Screenshot 2025-12-18 133534" src="https://github.com/user-attachments/assets/287aabbd-d845-47ad-93b7-33781ef06d2e" />
 
 ### C. Service Configuration (Nginx and iperf3)
 Nginx was enabled to start automatically on boot using systemd.
