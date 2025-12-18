@@ -38,9 +38,9 @@ Please navigate through the weekly logs below to view the technical implementati
 ---
 
 ## 🛠️ System Architecture Snapshot
+![System Architecture](./images/architecture.png)
 
-
-> "Optimised OS configurations can reduce server energy consumption by 15-30% through improved resource utilisation." — *Masanet et al. [cite: 12]*
+> Optimised OS configurations can reduce server energy consumption by 15-30% through improved resource utilisation.
 
 ---
 
