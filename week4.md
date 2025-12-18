@@ -76,7 +76,7 @@ sudo systemctl restart ssh
 
 
 ## 4. Firewall Configuration (UFW)
-I configured the Uncomplicated Firewall (UFW) to implement a "Default Deny" policy, permitting traffic strictly from the Workstation IP.
+​‍​‌‍​‍‌My firewall was set up using Uncomplicated Firewall (UFW) to carry out a **Default Deny** policy, which only allows traffic from the Workstation ​‍​‌‍​‍‌IP.
 
 ### Firewall Ruleset
 * **Default Incoming:** `DENY` (Blocks all traffic by default)
