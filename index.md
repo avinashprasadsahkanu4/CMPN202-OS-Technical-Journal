@@ -1,8 +1,11 @@
 # CMPN202 Operating Systems: Technical Journal
 
 **Student ID:** Avinash Prasad Sah Kanu
+
 **Student ID:** A00025473
+
 **Module:** CMPN202 Operating Systems  
+
 **Assessment:** Technical Journal & Configuration Project
 
 ---
