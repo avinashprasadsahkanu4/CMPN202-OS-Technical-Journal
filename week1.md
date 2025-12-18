@@ -1,6 +1,7 @@
 # Week 1: System Planning and Distribution Selection
 
 ## 1. Introduction
+
 This week focused on the planning and initial deployment of a dual-system architecture. The primary objective was to establish a secure, isolated environment that simulates a professional cloud infrastructure setup, separating the management plane (Workstation) from the production plane (Headless Server).
 
 ## 2. System Architecture
