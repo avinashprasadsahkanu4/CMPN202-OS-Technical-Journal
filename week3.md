@@ -38,7 +38,7 @@ sudo apt install stress-ng sysbench iperf3 nginx -y
 ```
 <img width="1708" height="1066" alt="image" src="https://github.com/user-attachments/assets/71e16b58-86db-4ee5-a9fe-5e1307577cab" />
 
-### C. Service Configuration (Nginx)
+### C. Service Configuration (Nginx and iperf3)
 Nginx was enabled to start automatically on boot using systemd.
 
 ```bash
@@ -62,7 +62,7 @@ iperf3 -s
 ```
 <img width="1072" height="104" alt="image" src="https://github.com/user-attachments/assets/2625bcb5-7abb-4553-b890-e7a46efebad2" />
 
-**Verification that tools are installed and the `nginx` and `iperf` services are active.**
+**Verification that tools are installed and the `nginx` and `iperf3` services are active.**
 
 ## 4. Expected Resource Profiles
 Based on the documentation for these tools, I have projected the expected resource impact during the Week 6 testing phase.
