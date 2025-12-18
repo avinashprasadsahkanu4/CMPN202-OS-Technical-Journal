@@ -69,23 +69,31 @@ The following command-line outputs confirm the successful deployment of the head
 
 #### A. Kernel & Architecture (`uname -a`)
 
-![System Architecture](./images/uname-a.png)
+<img width="1252" height="81" alt="uname -a" src="https://github.com/user-attachments/assets/5eda6589-7436-4f4b-8fba-c63ca67d7e5c" />
 
 Evidence of a 64-bit Linux kernel running on the target hardware. This verifies the core OS version.
 
 #### B. Memory Usage (`free -h`)
 
+<img width="847" height="83" alt="free -h" src="https://github.com/user-attachments/assets/f81e7023-a9d3-47fa-8fb6-648b884cef44" />
+
 **Analysis:** The system is using minimal RAM (ensure this is <500MB) due to the headless configuration, validating the sustainability justification.
 
 #### C. Disk Usage (`df -h`)
+
+<img width="997" height="219" alt="df -h" src="https://github.com/user-attachments/assets/560fa931-41ea-48ec-b50c-7d639f1fef2f" />
 
 Storage allocation for the root filesystem. This establishes the baseline storage footprint before installing applications.
 
 #### D. IP Address Verification (`ip addr`)
 
-Confirmation that interface enp0s8 has the static IP 192.168.56.20, proving the network configuration was successful.
+<img width="924" height="347" alt="ip addr" src="https://github.com/user-attachments/assets/a2b6d028-db30-4f63-a97f-108388a53a51" />
+
+Confirmation that interface enp0s8 has the static IP 192.168.56.6, proving the network configuration was successful.
 
 #### E. Distribution Info (`lsb_release -a`)
+
+<img width="496" height="159" alt="image" src="https://github.com/user-attachments/assets/918ecdcd-f152-41c2-908f-8c37043ac3ca" />
 
 Verifies the installation of Ubuntu 24.04 LTS.
 
